@@ -1,0 +1,40 @@
+Playwright commands to run tests
+************************************************************
+runs all tests present in tests folder for specified project in headless mode
+
+npx playwright test --project=chromium
+npx playwright test --project=firefox
+**************************************************************************
+runs all tests present in tests folder for specified project in headed mode
+npx playwright test --project=chromium --headed
+npx playwright test --project=firefox --headed
+**************************************************************************
+run a specific test 
+npx playwright test example.spec.ts --project=chromium --headed
+**************************************************************************
+run a specific test conaining title
+npx playwright test -g "has Title" --headed
+**************************************************************************
+run all tests on all browsers
+npx playwright test
+
+run all tests on all browsers in headed mode
+npx playwright test --headed
+**************************************************************************
+test.skip --> will skip the test
+test.only --> will only run this test
+**************************************************************************
+open the playwright in UI mode
+npx playwright test --UI
+**************************************************************************
+open the playwright in debug mode
+npx playwright test --debug
+**************************************************************************
+Timeouts
+Global Timeout -> Time taken for overall execution of all tests
+Test timeout -> Time taken by a test for execution
+Action timeout -> Time taken for an action to complete
+Navigation Timeout -> Time taken for navigating from one page to another page
+Test timeout cannot be greater than Global timeout
+Action timeout cannot be greater than test / global timeout
+**************************************************************************
