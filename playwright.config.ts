@@ -36,6 +36,9 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
+  grep: [new RegExp('@Smoke')],
+  //grepInvert: [new RegExp('@Smoke')]
+
   /* Configure projects for major browsers */
   projects: [
     {
