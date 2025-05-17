@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import LoginPage from '../../Pages/SauceDemo/LoginPage';
+import LoginPage from '../../../Pages/SauceDemo/LoginPage';
 
 const validUsername = "standard_user";
 const validPassword = "secret_sauce";

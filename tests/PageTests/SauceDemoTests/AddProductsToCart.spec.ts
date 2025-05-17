@@ -1,6 +1,6 @@
 import {expect, test} from '@playwright/test';
-import LoginPage from '../../Pages/SauceDemo/LoginPage';
-import InventoryPage from '../../Pages/SauceDemo/InventoryPage';
+import LoginPage from '../../../Pages/SauceDemo/LoginPage';
+import InventoryPage from '../../../Pages/SauceDemo/InventoryPage';
 
 test.describe('Add prducts to cart', async() =>{
 
