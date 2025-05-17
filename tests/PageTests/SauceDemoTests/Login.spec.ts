@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import LoginPage from '../../PageObjects/SauceDemo/LoginPage';
+import LoginPage from '../../Pages/SauceDemo/LoginPage';
 
 const validUsername = "standard_user";
 const validPassword = "secret_sauce";
@@ -18,7 +18,7 @@ test.describe('Login with Locked Out User', () =>
         
         // Verify the error message for locked out user
         await expect(page.getByText('Epic sadface: Sorry, this user has been locked out.')).toBeVisible();
-        
+        await page.close();
     });
 
     test('Login with empty password', async ({ page }) => {
@@ -31,7 +31,7 @@ test.describe('Login with Locked Out User', () =>
         
         // Verify the error message for empty password
         await expect(page.getByText('Epic sadface: Password is required')).toBeVisible();
-        
+        await page.close();
     });
 
     test('Login with empty username', async ({ page }) => {
@@ -44,7 +44,7 @@ test.describe('Login with Locked Out User', () =>
         
         // Verify the error message for empty username
         await expect(page.getByText('Epic sadface: Username is required')).toBeVisible();
-        
+        await page.close();
     });
 
     test('Login with empty credentials', async ({ page }) => {
@@ -57,7 +57,7 @@ test.describe('Login with Locked Out User', () =>
         
         // Verify the error message for empty credentials
         await expect(page.getByText('Epic sadface: Username is required')).toBeVisible();
-        
+        await page.close();
     });
 
     test('Login with valid credentials', async ({ page }) => {
@@ -69,7 +69,7 @@ test.describe('Login with Locked Out User', () =>
         await loginPage.login(validUsername, validPassword); 
         // Verify that the user is logged in
         await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
-        
+        await page.close();
     });
     
     test('Login with Invalid credentials', async ({ page }) => {
@@ -82,6 +82,6 @@ test.describe('Login with Locked Out User', () =>
         
         // Verify the error message for invalid credentials
         await expect(page.getByText('Epic sadface: Username and password do not match any user in this service')).toBeVisible();
-        
+        await page.close();
     });
 });

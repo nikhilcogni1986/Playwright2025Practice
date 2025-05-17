@@ -1,13 +1,15 @@
 import { Locator, Page } from "@playwright/test";
+import BasePage from "../SauceDemo/BasePage";
 
-export default class InventoryPage
+export default class InventoryPage extends BasePage
 {
     readonly swagLabs: Locator;
-    readonly cartValue: Locator;
-    readonly cartIcon: Locator;
+    private readonly cartValue: Locator;
+    private readonly cartIcon: Locator;
 
     constructor(public page: Page)
     {
+        super(page);
         this.page = page;
         this.swagLabs = page.getByText('Swag Labs', { exact: true });
         this.cartIcon = page.locator('a.shopping_cart_link');
